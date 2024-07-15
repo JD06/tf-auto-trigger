@@ -3,6 +3,7 @@ resource "aws_instance" "this" {
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public_subnet[0].id
   security_groups = [ aws_security_group.ec2-sg.id ]
+  key_name = "test-prj-15-07-24"
   tags = {
     Name = "${var.name}-${var.environment}-ec2"
     ManagedBy = "Terraform"
