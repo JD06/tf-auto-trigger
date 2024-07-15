@@ -22,3 +22,12 @@ locals {
     }
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket  = "test-tf-tfstate"
+    key     = "test-tf.tfstate"
+    encrypt = "true"
+    region  = "us-east-1"
+  }
+}
